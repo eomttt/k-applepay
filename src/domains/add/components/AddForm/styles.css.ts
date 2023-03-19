@@ -1,10 +1,16 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
+
+export const headTitle = style({
+  textAlign: 'right',
+  width: '100%',
+});
 
 export const section = style({
   marginBottom: 20,
   display: 'flex',
   flexDirection: 'column',
   gap: 8,
+  position: 'relative',
 });
 
 export const label = style({
@@ -17,6 +23,37 @@ export const input = style({
   borderRadius: 4,
   border: '1px solid #eaeaea',
   padding: '0 8px',
+});
+
+export const mapUrlInput = style([input, {
+  paddingRight: 120,
+}]);
+
+const mapUploadButtonBase = style({
+  position: 'absolute',
+  right: 10,
+  top: 30,
+  border: '1px solid #eaeaea',
+  padding: '4px 8px',
+  borderRadius: 4,
+  transition: 'opacity 0.2s ease-in-out',
+
+  ':active': {
+    backgroundColor: '#eaeaea',
+  },
+});
+
+export const mapUploadButton = styleVariants({
+  hide: [mapUploadButtonBase, {
+    opacity: 0,
+  }],
+  show: [mapUploadButtonBase, {
+    opacity: 1,
+  }],
+});
+
+export const mapContainer = style({
+  width: '100%',
 });
 
 export const textarea = style({
@@ -34,7 +71,6 @@ export const buttonSection = style({
 });
 
 export const submitButton = style({
-  appearance: 'none',
   fontWeight: 'bold',
   fontSize: 16,
   border: '1px solid #eaeaea',

@@ -19,12 +19,10 @@ const Detail = ({ data }: Props) => {
   });
 
   return (
-    <div>
-      <div
-        ref={mapElement}
-        className={Styles.mapContainer}
-      />
-    </div>
+    <div
+      ref={mapElement}
+      className={Styles.mapContainer}
+    />
   );
 };
 
