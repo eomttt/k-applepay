@@ -86,6 +86,10 @@ body {
   /* font-family: 'Noto Sans KR', sans-serif; */
 }
 
+li {
+  list-style: none;
+}
+
 
 a {
   color: inherit;

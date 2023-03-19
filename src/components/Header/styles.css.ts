@@ -7,4 +7,8 @@ export const header = style({
   display: 'flex',
   alignItems: 'center',
   padding: `0 ${PADDING_X}px`,
+  borderBottom: '1px solid #eaeaea',
+  position: 'fixed',
+  backgroundColor: '#fff',
+  opacity: 0.8,
 });

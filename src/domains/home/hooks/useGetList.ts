@@ -1,18 +1,7 @@
-import { ListItemData } from '../models';
+import { listItems } from 'mocks/index';
 
 const useGetList = () => ({
-  data: mockListItemData,
+  data: listItems,
 });
-
-const mockListItemData: ListItemData[] = [
-  {
-    id: '1',
-    title: 'Item 1',
-  },
-  {
-    id: '2',
-    title: 'Item 2',
-  },
-];
 
 export default useGetList;

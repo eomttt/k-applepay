@@ -3,13 +3,14 @@ import { ReactNode } from 'react';
 import { container, content } from './styles.css';
 
 type Props = {
+  headerContent?: ReactNode;
   children: ReactNode;
 };
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ headerContent, children }: Props) => (
   <>
     <Header>
-      Header
+      {headerContent || 'Header'}
     </Header>
     <section className={container}>
       <div className={content}>

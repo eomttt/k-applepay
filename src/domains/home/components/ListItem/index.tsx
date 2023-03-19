@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ListItemData } from '../models';
+import { ListItemData } from '../../models';
+import * as Styles from './styles.css';
 
 type Props = {
   item: ListItemData;
@@ -7,7 +8,11 @@ type Props = {
 
 const ListItem = ({ item }: Props) => (
   <Link href={`/details/${item.id}`}>
-    {item.title}
+    <div className={Styles.container}>
+      <p>
+        {item.title}
+      </p>
+    </div>
   </Link>
 );
 

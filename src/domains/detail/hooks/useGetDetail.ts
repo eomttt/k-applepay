@@ -1,10 +1,5 @@
-import { DetailData } from '../models';
+import { detailItem } from 'mocks/index';
 
-const useGetDetail = (id: string) => ({ data: mockDetailData });
-
-const mockDetailData: DetailData = {
-  id: '1',
-  title: 'Item 1',
-};
+const useGetDetail = (id: string) => ({ data: detailItem(id) });
 
 export default useGetDetail;

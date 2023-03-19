@@ -1,5 +1,5 @@
-import useGetList from '../hooks/useGetList';
-import ListItem from './ListItem';
+import useGetList from '../../hooks/useGetList';
+import ListItem from '../ListItem';
 
 const List = () => {
   const { data } = useGetList();

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { PADDING_X } from 'components/constants';
+import { HEADER_HEIGHT, PADDING_X } from 'components/constants';
 
 const CONTENT_MAX_WIDTH = 1024;
 
@@ -12,5 +12,5 @@ export const container = style({
 export const content = style({
   width: '100%',
   maxWidth: CONTENT_MAX_WIDTH,
-  padding: `0 ${PADDING_X}px`,
+  padding: `${HEADER_HEIGHT + 10}px ${PADDING_X}px 0`,
 });
