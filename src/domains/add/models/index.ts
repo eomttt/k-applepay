@@ -1,6 +1,7 @@
 export type CreateData = {
   title: string;
   description?: string;
+  restrauntId?: string;
   location?: {
     x: number;
     y: number;
@@ -8,6 +9,7 @@ export type CreateData = {
 };
 
 export type RestrauntData = {
+  id: string;
   name: string;
   address: string;
   categories: string[];

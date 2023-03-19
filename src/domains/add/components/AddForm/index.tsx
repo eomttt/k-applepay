@@ -23,6 +23,7 @@ const AddForm = () => {
     onSuccess: (data: RestrauntData) => {
       setFormData((prev) => ({
         ...prev,
+        id: data.id,
         title: data.name,
         description: data.address,
         location: {

@@ -19,10 +19,25 @@ const Detail = ({ data }: Props) => {
   });
 
   return (
-    <div
-      ref={mapElement}
-      className={Styles.mapContainer}
-    />
+    <div>
+      <div className={Styles.section}>
+        <span className={Styles.label}>
+          설명
+        </span>
+        <p>
+          {data.description}
+        </p>
+      </div>
+      <div className={Styles.section}>
+        <span className={Styles.label}>
+          지도
+        </span>
+        <div
+          ref={mapElement}
+          className={Styles.mapContainer}
+        />
+      </div>
+    </div>
   );
 };
 
