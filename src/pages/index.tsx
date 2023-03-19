@@ -1,9 +1,9 @@
 import Layout from 'components/Layout';
-import { List } from 'domains/home';
+import { Header, List } from 'domains/home';
 
 export default function HomePage() {
   return (
-    <Layout>
+    <Layout headerContent={<Header />}>
       <List />
     </Layout>
   );

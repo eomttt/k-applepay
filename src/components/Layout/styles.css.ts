@@ -14,3 +14,8 @@ export const content = style({
   maxWidth: CONTENT_MAX_WIDTH,
   padding: `${HEADER_HEIGHT + 10}px ${PADDING_X}px 0`,
 });
+
+export const headerTitle = style({
+  fontWeight: 'bold',
+  fontSize: 20,
+});
