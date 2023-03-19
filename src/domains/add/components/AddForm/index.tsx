@@ -23,7 +23,7 @@ const AddForm = () => {
 
   const isFilledMap = useMemo(() => !!mapUrl && !!formData.location, [formData.location, mapUrl]);
 
-  const getLocation = useGetLocation({
+  const { mutate: getLocation, isLoading } = useGetLocation({
     onSuccess: (data: RestrauntData) => {
       setFormData((prev) => ({
         ...prev,
@@ -95,7 +95,7 @@ const AddForm = () => {
           지도 URL
         </span>
         <input
-          disabled={isFilledMap}
+          disabled={isLoading || isFilledMap}
           className={Styles.mapUrlInput}
           value={mapUrl}
           placeholder="지도 URL을 입력해주세요. (네이버 지도만 지원)"
@@ -108,6 +108,11 @@ const AddForm = () => {
           className={Styles.mapUploadButton[mapUrl ? 'show' : 'hide']}
           onClick={(e) => {
             e.preventDefault();
+
+            if (isLoading) {
+              return;
+            }
+
             if (isFilledMap) {
               handleClearMap();
             } else {
@@ -115,7 +120,7 @@ const AddForm = () => {
             }
           }}
         >
-          {isFilledMap ? '다시 업로드' : '업로드'}
+          {isLoading ? '업로드 중...' : isFilledMap ? '다시 업로드' : '업로드'}
         </button>
         <div
           ref={mapElement}
