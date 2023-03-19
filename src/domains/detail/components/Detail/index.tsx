@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Detail = ({ data }: Props) => {
-  const { x: lat, y: lng } = data.location;
+  const { x: lng, y: lat } = data.location;
   const mapElement = useRegisterMap({
     lat,
     lng,

@@ -2,7 +2,11 @@ import useGetList from '../../hooks/useGetList';
 import ListItem from '../ListItem';
 
 const List = () => {
-  const { data } = useGetList();
+  const { data, isLoading } = useGetList();
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <ul>

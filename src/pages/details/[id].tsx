@@ -7,7 +7,15 @@ export default function DetailPage() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { data } = useGetDetail(id as string);
+  const { data, isLoading } = useGetDetail(id as string);
+
+  if (isLoading) {
+    return (
+      <Layout headerContent="Loading...">
+        <div />
+      </Layout>
+    );
+  }
 
   return (
     <Layout headerContent={data.title}>

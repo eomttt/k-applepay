@@ -1,11 +1,15 @@
+import useAddItem from 'domains/add/hooks/useAddItem';
 import useGetLocation from 'domains/add/hooks/useGetLocation';
 import { CreateData, RestrauntData } from 'domains/add/models';
+import { useRouter } from 'next/router';
 import {
   useEffect, useMemo, useRef, useState,
 } from 'react';
 import * as Styles from './styles.css';
 
 const AddForm = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState<CreateData>({
     title: '',
     description: '',
@@ -34,6 +38,8 @@ const AddForm = () => {
     },
   });
 
+  const addItem = useAddItem();
+
   const handleClearMap = () => {
     setMapUrl('');
     setFormData((prev) => ({
@@ -49,7 +55,8 @@ const AddForm = () => {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      console.log('submit', formData);
+      addItem(formData);
+      router.replace('/');
     }}
     >
       <h5 className={Styles.headTitle}>
