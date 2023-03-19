@@ -2,5 +2,8 @@
   "extends": [
     "@diritto/eslint-config",
     "@diritto/eslint-config/react/typescript"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-use-before-define": "off"
+  }
 }
