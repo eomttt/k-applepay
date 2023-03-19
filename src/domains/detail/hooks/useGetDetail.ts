@@ -5,8 +5,11 @@ import { DetailData } from '../models';
 const useGetDetail = (id: string) => {
   // TODO: API call
   const [result, setResult] = useState<{
-    isLoading: boolean;
-    data: DetailData | undefined;
+    isLoading: true;
+    data: undefined;
+  } | {
+    isLoading: false;
+    data: DetailData;
   }>({
     isLoading: true,
     data: undefined,
